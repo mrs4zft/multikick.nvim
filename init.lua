@@ -5,6 +5,7 @@ require("user.autocmds")
 
 SPEC("user.colorschemes.tokyonight")
 
+SPEC("user.alpha")
 SPEC("user.comment")
 SPEC("user.completion")
 SPEC("user.conform")
@@ -22,5 +23,6 @@ SPEC("user.treesitter")
 SPEC("user.trouble")
 SPEC("user.undotree")
 SPEC("user.whichkey")
+SPEC("user.zen")
 
 require("user.lazy")
