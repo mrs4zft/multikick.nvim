@@ -14,7 +14,7 @@ function M.config()
 	require("venv-selector").setup({
 		-- Your options go here
 		name = "venv",
-		auto_refresh = false,
+		auto_refresh = true,
 		search_venv_managers = true,
 		search_workspace = true,
 		search = true,
