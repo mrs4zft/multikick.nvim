@@ -44,6 +44,7 @@ function M.config()
 		ensure_installed = {
 			-- Update this to ensure that you have the debuggers for the langs you want
 			"delve",
+			"debugpy",
 		},
 	})
 
@@ -88,7 +89,7 @@ function M.config()
 
 	-- Install golang specific config
 	require("dap-go").setup()
-	require("dap-python").setup("/usr/bin/python3")
+	require("dap-python").setup("/Users/marsch/.pyenv/shims/python")
 end
 
 return M

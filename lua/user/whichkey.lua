@@ -12,6 +12,7 @@ function M.config() -- This is the function that runs, AFTER loading
 		["<leader>d"] = { name = "[D]iagnostics", _ = "which_key_ignore" },
 		["<leader>f"] = { name = "[F]ind", _ = "which_key_ignore" },
 		["<leader>g"] = { name = "[G]it", _ = "which_key_ignore" },
+		["<leader>h"] = { name = "[H]arpoon", _ = "which_key_ignore" },
 		["<leader>o"] = { name = "[O]rg", _ = "which_key_ignore" },
 		["<leader>oe"] = { name = "Pandoc [E]xport", _ = "which_key_ignore" },
 		["<leader>t"] = { name = "[T]ablemode", _ = "which_key_ignore" },
