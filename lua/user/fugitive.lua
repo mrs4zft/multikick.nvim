@@ -32,6 +32,9 @@ function M.config()
 			-- needed if i did not set the branch up correctly
 			opts.desc = "Push selecting origin"
 			vim.keymap.set("n", "<leader>gt", ":Git push -u origin ", opts)
+
+			opts.desc = "Pull"
+			vim.keymap.set("n", "<leader>gd", ":Git pull", opts)
 		end,
 	})
 
