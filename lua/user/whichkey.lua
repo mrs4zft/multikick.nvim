@@ -7,16 +7,27 @@ function M.config() -- This is the function that runs, AFTER loading
 	require("which-key").setup()
 
 	-- Document existing key chains
-	require("which-key").register({
-		["<leader>c"] = { name = "[C]ode", _ = "which_key_ignore" },
-		["<leader>d"] = { name = "[D]iagnostics", _ = "which_key_ignore" },
-		["<leader>f"] = { name = "[F]ind", _ = "which_key_ignore" },
-		["<leader>g"] = { name = "[G]it", _ = "which_key_ignore" },
-		["<leader>h"] = { name = "[H]arpoon", _ = "which_key_ignore" },
-		["<leader>o"] = { name = "[O]rg", _ = "which_key_ignore" },
-		["<leader>oe"] = { name = "Pandoc [E]xport", _ = "which_key_ignore" },
-		["<leader>t"] = { name = "[T]ablemode", _ = "which_key_ignore" },
-		["<leader>w"] = { name = "[W]orkspace", _ = "which_key_ignore" },
+	require("which-key").add({
+		{
+			{ "<leader>c", group = "[C]ode" },
+			{ "<leader>c_", hidden = true },
+			{ "<leader>d", group = "[D]iagnostics" },
+			{ "<leader>d_", hidden = true },
+			{ "<leader>f", group = "[F]ind" },
+			{ "<leader>f_", hidden = true },
+			{ "<leader>g", group = "[G]it" },
+			{ "<leader>g_", hidden = true },
+			{ "<leader>h", group = "[H]arpoon" },
+			{ "<leader>h_", hidden = true },
+			{ "<leader>o", group = "[O]rg" },
+			{ "<leader>o_", hidden = true },
+			{ "<leader>oe", group = "Pandoc [E]xport" },
+			{ "<leader>oe_", hidden = true },
+			{ "<leader>t", group = "[T]ablemode" },
+			{ "<leader>t_", hidden = true },
+			{ "<leader>w", group = "[W]orkspace" },
+			{ "<leader>w_", hidden = true },
+		},
 	})
 end
 return M

@@ -24,7 +24,6 @@ function M.config()
 	vim.keymap.set("n", "<leader>oo", "<cmd>e ~/org/refile.org<CR>", { desc = "Open refile.org" })
 
 	-- Load treesitter grammar for org
-	require("orgmode").setup_ts_grammar()
 
 	-- Setup treesitter
 	require("nvim-treesitter.configs").setup({

@@ -48,7 +48,7 @@ function M.config()
 	-- [[ Configure Telescope ]]
 	-- See `:help telescope` and `:help telescope.setup()`
 	local actions = require("telescope.actions")
-	local trouble = require("trouble.providers.telescope")
+	local trouble = require("trouble.sources.telescope")
 
 	require("telescope").setup({
 		-- You can put your default mappings / updates / etc. in here
@@ -63,7 +63,7 @@ function M.config()
 					["<C-j>"] = actions.move_selection_next,
 					["<C-k>"] = actions.move_selection_previous,
 
-					["<C-t>"] = trouble.open_with_trouble,
+					["<C-t>"] = trouble.open,
 				},
 				n = {
 					["<esc>"] = actions.close,
@@ -71,7 +71,7 @@ function M.config()
 					["k"] = actions.move_selection_previous,
 					["q"] = actions.close,
 
-					["<C-t>"] = trouble.open_with_trouble,
+					["<C-t>"] = trouble.open,
 				},
 			},
 			--   mappings = {
