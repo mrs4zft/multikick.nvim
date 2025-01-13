@@ -1,7 +1,7 @@
 local M = {
 	"nvim-orgmode/orgmode",
 	dependencies = {
-		{ "nvim-treesitter/nvim-treesitter", lazy = true },
+		{ "nvim-treesitter/nvim-treesitter" },
 		{ "ranjithshegde/orgWiki.nvim" },
 		{ "akinsho/org-bullets.nvim" },
 		{ "dhruvasagar/vim-table-mode" },
@@ -11,28 +11,25 @@ local M = {
 
 function M.config()
 	-- Mapping to add new items from insert mode.
-	vim.api.nvim_create_autocmd("FileType", {
-		pattern = "org",
-		callback = function()
-			vim.keymap.set("i", "<S-CR>", '<cmd>lua require("orgmode").action("org_mappings.meta_return")<CR>', {
-				silent = true,
-				buffer = true,
-			})
-		end,
-	})
+	-- vim.api.nvim_create_autocmd("FileType", {
+	-- 	pattern = "org",
+	-- 	callback = function()
+	-- 		vim.keymap.set("i", "<C-CR>", '<cmd>lua require("orgmode").action("org_mappings.meta_return")<CR>', {
+	-- 			silent = true,
+	-- 			buffer = true,
+	-- 		})
+	-- 	end,
+	-- })
 
 	vim.keymap.set("n", "<leader>oo", "<cmd>e ~/org/refile.org<CR>", { desc = "Open refile.org" })
 
-	-- Load treesitter grammar for org
-	require("orgmode").setup_ts_grammar()
-
-	-- Setup treesitter
-	require("nvim-treesitter.configs").setup({
-		highlight = {
-			enable = true,
-		},
-		ensure_installed = { "org" },
-	})
+	-- -- Setup treesitter
+	-- require("nvim-treesitter.configs").setup({
+	-- 	highlight = {
+	-- 		enable = true,
+	-- 	},
+	-- 	ensure_installed = { "org" },
+	-- })
 
 	-- Org wiki
 	require("orgWiki").setup({
@@ -74,6 +71,11 @@ function M.config()
 				description = "Positivtagebuch",
 				template = "* %t",
 				target = "~/org/positiv.org",
+			},
+		},
+		mappings = {
+			org = {
+				-- org_toggle_checkbox = "<Leader>ox",
 			},
 		},
 	})

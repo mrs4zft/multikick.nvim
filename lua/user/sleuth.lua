@@ -1,5 +1,5 @@
 local M = {
-	"tpope/vim-sleuth",
+	-- "tpope/vim-sleuth",
 }
 
 return M

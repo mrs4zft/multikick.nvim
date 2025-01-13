@@ -27,5 +27,6 @@ SPEC("user.undotree")
 SPEC("user.venv_selector")
 SPEC("user.whichkey")
 SPEC("user.zen")
+SPEC("user.slime")
 
 require("user.lazy")

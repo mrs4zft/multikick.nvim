@@ -14,6 +14,7 @@ local M = { -- LSP Configuration & Plugins
 		-- used for completion, annotations and signatures of Neovim apis
 		{ "folke/neodev.nvim", opts = {} },
 	},
+	opts = { opts = { inlay_hints = { enabled = false } } },
 }
 function M.config()
 	-- Brief aside: **What is LSP?**
@@ -147,7 +148,15 @@ function M.config()
 	local servers = {
 		-- clangd = {},
 		-- gopls = {},
-		basedpyright = {},
+		basedpyright = {
+			settings = {
+				basedpyright = {
+					analysis = {
+						typeCheckingMode = "standard",
+					},
+				},
+			},
+		},
 		-- rust_analyzer = {},
 		-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 		--

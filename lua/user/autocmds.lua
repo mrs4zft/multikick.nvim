@@ -11,3 +11,17 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "org",
+	callback = function()
+		vim.keymap.set("i", "<C-Space>", '<cmd>lua require("orgmode").action("org_mappings.meta_return")<CR>', {
+			silent = true,
+			buffer = true,
+		})
+		vim.keymap.set("n", "<C-Space>", '<cmd>lua require("orgmode").action("org_mappings.toggle_checkbox")<CR>', {
+			silent = true,
+			buffer = true,
+		})
+	end,
+})
