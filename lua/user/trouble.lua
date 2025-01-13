@@ -6,21 +6,24 @@ local M = {
 		-- or leave it empty to use the default settings
 		-- refer to the configuration section below
 	},
+	cmd = "Trouble",
+	keys = {
+		{
+			"<leader>dx",
+			"<cmd>Trouble diagnostics toggle<cr>",
+			desc = "Diagnostics (Trouble)",
+		},
+	},
 }
 
 function M.config()
-	vim.keymap.set("n", "<leader>dx", function()
-		require("trouble").toggle()
-	end, { desc = "Open trouble" })
 	vim.keymap.set("n", "<leader>dw", function()
 		require("trouble").toggle("workspace_diagnostics")
 	end, { desc = "Workspace diagnostics" })
 	vim.keymap.set("n", "<leader>dd", function()
 		require("trouble").toggle("document_diagnostics")
 	end, { desc = "Document diagnostics" })
-	vim.keymap.set("n", "<leader>dq", function()
-		require("trouble").toggle("quickfix")
-	end, { desc = "Trouble quickfix" })
+	vim.keymap.set("n", "<leader>dq", "<cmd>Trouble qflist toggle<cr>", { desc = "Trouble quickfix" })
 	vim.keymap.set("n", "<leader>dl", function()
 		require("trouble").toggle("loclist")
 	end, { desc = "Loclist" })

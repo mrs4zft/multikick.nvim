@@ -23,13 +23,15 @@ function M.config()
 
 	vim.keymap.set("n", "<leader>oo", "<cmd>e ~/org/refile.org<CR>", { desc = "Open refile.org" })
 
-	-- -- Setup treesitter
-	-- require("nvim-treesitter.configs").setup({
-	-- 	highlight = {
-	-- 		enable = true,
-	-- 	},
-	-- 	ensure_installed = { "org" },
-	-- })
+	-- Load treesitter grammar for org
+
+	-- Setup treesitter
+	require("nvim-treesitter.configs").setup({
+		highlight = {
+			enable = true,
+		},
+		ensure_installed = { "org" },
+	})
 
 	-- Org wiki
 	require("orgWiki").setup({
