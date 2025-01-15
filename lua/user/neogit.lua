@@ -21,6 +21,10 @@ function M.config()
 			kind = "split",
 		},
 		-- customize displayed signs
+		integrations = {
+			diffview = true,
+			telescope = true,
+		},
 	})
 end
 
