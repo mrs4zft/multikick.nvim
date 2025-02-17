@@ -18,6 +18,7 @@ local M = { -- Fuzzy Finder (files, lsp, etc)
 			end,
 		},
 		{ "nvim-telescope/telescope-ui-select.nvim" },
+		{ "nvim-telescope/telescope-project.nvim" },
 		{ "jonarrien/telescope-cmdline.nvim" },
 
 		-- Useful for getting pretty icons, but requires a Nerd Font.
@@ -83,6 +84,12 @@ function M.config()
 			["ui-select"] = {
 				require("telescope.themes").get_ivy(),
 			},
+			project = {
+				base_dirs = {
+					"~/projects",
+					"~/.config",
+				},
+			},
 		},
 	})
 
@@ -90,6 +97,7 @@ function M.config()
 	pcall(require("telescope").load_extension, "fzf")
 	pcall(require("telescope").load_extension, "ui-select")
 	pcall(require("telescope").load_extension, "cmdline")
+	pcall(require("telescope").load_extension, "projects")
 
 	-- See `:help telescope.builtin`
 	local builtin = require("telescope.builtin")

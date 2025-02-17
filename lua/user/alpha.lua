@@ -26,7 +26,7 @@ function M.config()
 	dashboard.section.buttons.val = {
 		button("f", " " .. " Find file", ":Telescope find_files <CR>"),
 		button("n", " " .. " New file", ":ene <BAR> startinsert <CR>"),
-		button("p", " " .. " Find project", ":lua require('telescope').extensions.projects.projects()<CR>"),
+		button("p", " " .. " Find project", ":lua require('telescope').extensions.project.project()<CR>"),
 		button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
 		button("t", " " .. " Find text", ":Telescope live_grep <CR>"),
 		button("c", " " .. " Config", ":e ~/.config/nvim/init.lua <CR>"),

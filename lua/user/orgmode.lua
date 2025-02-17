@@ -62,6 +62,7 @@ function M.config()
 		-- mappings = {
 		--   org_return_uses_meta_return = true
 		-- },
+		org_table_consolidate_motions = true,
 		org_startup_folded = "showeverything",
 		org_capture_templates = {
 			r = {

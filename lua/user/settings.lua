@@ -85,7 +85,7 @@ vim.opt.completeopt = { "menuone", "noselect" }
 
 -- so that `` is visible in markdown files
 vim.opt.conceallevel = 2
-vim.opt.concealcursor = "nc"
+vim.opt.concealcursor = ""
 
 -- the encoding written to a file
 vim.opt.fileencoding = "utf-8"
