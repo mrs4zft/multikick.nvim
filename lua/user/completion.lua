@@ -53,7 +53,6 @@ local M = {
 			},
 			providers = {
 				orgmode = {
-
 					name = "Orgmode",
 					module = "orgmode.org.autocompletion.blink",
 					fallbacks = { "buffer" },
