@@ -158,3 +158,4 @@ vim.opt.isfname:append("@-@")
 -- vim.opt.fillchars:append({
 -- 	stl = " ",
 -- })
+--

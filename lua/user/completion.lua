@@ -22,6 +22,7 @@ local M = {
 			["<C-y>"] = { "show", "show_documentation", "hide_documentation" },
 			["<C-e>"] = { "hide" },
 			["<C-space>"] = { "select_and_accept" },
+			["<C-l>"] = { "select_and_accept" },
 
 			["<C-k>"] = { "select_prev", "fallback" },
 			["<C-j>"] = { "select_next", "fallback" },

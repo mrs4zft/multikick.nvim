@@ -82,7 +82,7 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without yank
 -- Drive a substitution for the word under the cursor.
 vim.keymap.set(
 	"n",
-	"<leader>c",
+	"<leader>C",
 	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
 	{ desc = "Change word under cursor" }
 )

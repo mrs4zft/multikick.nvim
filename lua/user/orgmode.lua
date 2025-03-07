@@ -45,7 +45,7 @@ function M.config()
 			-- list symbol
 			list = "•",
 			-- headlines can be a list
-			headlines = { "◉", "○", "✸", "✿" },
+			-- headlines = { "◉", "○", "✸", "✿" },
 			-- or false to disable the symbol. Works for all symbols
 			checkboxes = {
 				half = { "󰦖", "OrgTSCheckboxHalfChecked" },

@@ -7,7 +7,7 @@ function M.config()
 	-- [[ Configure Treesitter ]] See `:help nvim-treesitter`
 
 	local opts = {
-		ensure_installed = { "bash", "c", "html", "lua", "luadoc", "markdown", "vim", "vimdoc", "python" },
+		ensure_installed = { "bash", "c", "html", "lua", "luadoc", "markdown", "vim", "vimdoc", "python", "zig", "go" },
 		-- Autoinstall languages that are not installed
 		-- auto_install = true,
 		highlight = {
@@ -16,6 +16,15 @@ function M.config()
 			--  If you are experiencing weird indenting issues, add the language to
 			--  the list of additional_vim_regex_highlighting and disabled languages for indent.
 			additional_vim_regex_highlighting = { "ruby" },
+		},
+		incremental_selection = {
+			enable = true,
+			keymaps = {
+				init_selection = "gnn", -- set to `false` to disable one of the mappings
+				node_incremental = "grn",
+				scope_incremental = "grc",
+				node_decremental = "grm",
+			},
 		},
 		indent = { enable = true, disable = { "ruby" } },
 	}

@@ -182,6 +182,9 @@ function M.config()
 				},
 			},
 		},
+
+		zls = {},
+		gopls = {},
 	}
 
 	-- Ensure the servers and tools above are installed
