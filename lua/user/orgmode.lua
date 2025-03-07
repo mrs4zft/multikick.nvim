@@ -2,6 +2,7 @@ local M = {
 	"nvim-orgmode/orgmode",
 	dependencies = {
 		{ "nvim-treesitter/nvim-treesitter" },
+		{ "nvim-orgmode/telescope-orgmode.nvim" },
 		{ "ranjithshegde/orgWiki.nvim" },
 		{ "akinsho/org-bullets.nvim" },
 		{ "dhruvasagar/vim-table-mode" },
@@ -57,11 +58,12 @@ function M.config()
 	-- Setup orgmode
 	require("orgmode").setup({
 		org_agenda_files = "~/org/**/*",
-		org_archive_file = "~/org/archive/2024archive.org",
+		org_archive_file = "~/org/archive/2025archive.org",
 		org_default_notes_file = "~/org/refile.org",
 		-- mappings = {
 		--   org_return_uses_meta_return = true
 		-- },
+		org_table_consolidate_motions = true,
 		org_startup_folded = "showeverything",
 		org_capture_templates = {
 			r = {

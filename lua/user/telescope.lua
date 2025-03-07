@@ -18,6 +18,7 @@ local M = { -- Fuzzy Finder (files, lsp, etc)
 			end,
 		},
 		{ "nvim-telescope/telescope-ui-select.nvim" },
+		{ "nvim-telescope/telescope-project.nvim" },
 		{ "jonarrien/telescope-cmdline.nvim" },
 
 		-- Useful for getting pretty icons, but requires a Nerd Font.
@@ -83,13 +84,21 @@ function M.config()
 			["ui-select"] = {
 				require("telescope.themes").get_ivy(),
 			},
+			project = {
+				base_dirs = {
+					"~/projects",
+					"~/.config",
+				},
+			},
 		},
 	})
 
 	-- Enable Telescope extensions if they are installed
 	pcall(require("telescope").load_extension, "fzf")
 	pcall(require("telescope").load_extension, "ui-select")
+	pcall(require("telescope").load_extension, "orgmode")
 	pcall(require("telescope").load_extension, "cmdline")
+	pcall(require("telescope").load_extension, "projects")
 
 	-- See `:help telescope.builtin`
 	local builtin = require("telescope.builtin")
@@ -104,6 +113,22 @@ function M.config()
 	vim.keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = '[F]ind Recent Files ("." for repeat)' })
 	vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 	vim.keymap.set("n", "<leader>x", "<cmd>Telescope cmdline<CR>", { desc = "Find and e[x]ecute command" })
+	vim.keymap.set(
+		"n",
+		"<leader>or",
+		require("telescope").extensions.orgmode.refile_heading,
+		{ desc = "Refile Heading" }
+	)
+	vim.keymap.set(
+		"n",
+		"<leader>ofh",
+		require("telescope").extensions.orgmode.search_headings,
+		{ desc = "Search Heading" }
+	)
+	vim.keymap.set("n", "<leader>off", function()
+		require("telescope").extensions.orgmode.search_headings({ mode = "orgfiles" })
+	end, { desc = "Search Org File" })
+	vim.keymap.set("n", "<leader>ol", require("telescope").extensions.orgmode.insert_link, { desc = "Insert Link" })
 
 	-- Slightly advanced example of overriding default behavior and theme
 	vim.keymap.set("n", "<leader>/", function()
